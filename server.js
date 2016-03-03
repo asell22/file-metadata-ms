@@ -7,8 +7,12 @@ app.use(express.static('public'));
 app.use(multer().single('file-to-analyze'));
 
 app.post('/api/fileanalyze', function(req, res, next) {
-   console.log(req.file);
-   res.send(); 
+   var name = req.file.originalname;
+   var size = req.file.size + ' bytes';
+   res.send({
+      name: name,
+      size: size
+   }); 
 });
 
 app.listen(process.env.PORT, process.env.IP, function() {
