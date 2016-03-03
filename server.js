@@ -15,6 +15,6 @@ app.post('/api/fileanalyze', function(req, res, next) {
    }); 
 });
 
-app.listen(process.env.PORT, process.env.IP, function() {
+app.listen(process.env.PORT, function() {
    console.log('Server listening on port', process.env.PORT); 
 });
